@@ -193,7 +193,7 @@ $(document).ready(function (e) {
 
     // Slide3 features, bg-object
     tl3.fromTo("#sl3-subhead > g", 0.7, { opacity: 0, y: 300, delay: 0.2, },{ opacity: 1, y: 0, ease: "back", stagger: 0.1 })
-      .fromTo("#sl3-btng", { opacity: 0, y: 100, },{ opacity: 1, y: 0, ease: "back" }, "-=0.6")
+      .fromTo(".sl-btng", { opacity: 0, y: 100, },{ opacity: 1, y: 0, ease: "back" }, "-=0.6")
       .fromTo("#sl3bg-obj", { opacity: 0, y: -100, },{ opacity: 1, y: 0, ease: "back" }, "-=0.6")
 
       // All circle groups
