@@ -250,7 +250,28 @@ a.da_link:hover {
   margin: 5px 0;
 }
 /* TESTIMONIALS */
-
+div.slide-btn-grp {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px auto;
+}
+.slide-btn-grp > button {
+  border: solid 1px var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: transparent;
+  font-family: pm;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all .4s;
+}
+.slide-btn-grp > button:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
 /*
   ##Device = Laptops, Desktops
   ##Screen = B/w 1025px to 1280px

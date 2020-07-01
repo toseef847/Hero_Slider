@@ -148,6 +148,7 @@ $(document).ready(function (e) {
   // *********** SVG CAROUSEL ANIMATIONS ***********
 
   function animate() {
+
     // Slide 1
     var tl = gsap.timeline({ defaults: { transformOrigin: "50% 50%" }}); // timeline for slide1 animations
 
@@ -169,7 +170,7 @@ $(document).ready(function (e) {
       .fromTo(".sl1heart", { opacity: 0, x: 300 },{ opacity: 1, x: 0, ease: "back" }, "-=0.5")
       .fromTo(".sl1user", { opacity: 0, y: -300 },{ opacity: 1, y: 0, ease: "back" }, "-=0.5")
       .fromTo('.sl1eye', {opacity: 0, y: -100,x: -200,}, {opacity: 1,y: 0,x: 0, ease: 'back'}, "-=0.5")
-      .fromTo(".sl1chat",{ opacity: 0, x: -100, y: -200 },{opacity : 1, x: 0, y: 0, onComplete: killObj(tl) }, "-=0.5");
+      .fromTo(".sl1chat",{ opacity: 0, x: -100, y: -200 },{opacity : 1, x: 0, y: 0, onComplete: killObj }, "-=0.5");
 
     // Slide 2
     var tl2 = gsap.timeline({ defaults: { transformOrigin: "50% 50%" }}); // Timeline for slide 2 animations
@@ -182,16 +183,16 @@ $(document).ready(function (e) {
 
       // Girl and objects
       .fromTo(".sl2-girl", { opacity: 0, x: 400 },{ opacity: 1, x: 0, ease: "back" }, "-=0.5")
-      .fromTo(".sl2-girlobj-heart",{ opacity: 0, x: 200, y: -50 },{ opacity: 1, x: 0, y: 0, ease: "back" },"-=0.5")
-      .fromTo(".sl2-girlobj-eye", { opacity: 0, x: 200, y: -50 },{ opacity: 1, x: 0, y: 0, ease: "back" }, "-=0.5")
-      .fromTo( ".sl2-girlobj-chat", { opacity: 0, x: 150, y: -50 },{ opacity: 1, x: 0, y: 0, ease: "back" }, "-=0.5")
-      .fromTo( ".sl2-girlobj-user",{ opacity: 0, x: 20, y: -100 },{ opacity: 1, x: 0, y: 0, ease: "back", onComplete: killObj(tl2) }, "-=0.5");
+      .fromTo(".sl2-girlobj-heart",{ opacity: 0, x: 200, y: -50 },{ opacity: 1, x: 0, y: 0, ease: "back" },"-=0.4")
+      .fromTo(".sl2-girlobj-eye", { opacity: 0, x: 200, y: -100 },{ opacity: 1, x: 0, y: 0, ease: "back" }, "-=0.4")
+      .fromTo( ".sl2-girlobj-chat", { opacity: 0, x: 150, y: -100 },{ opacity: 1, x: 0, y: 0, ease: "back" }, "-=0.4")
+      .fromTo( ".sl2-girlobj-user",{ opacity: 0, x: 20, y: -150 },{ opacity: 1, x: 0, y: 0, ease: "back", onComplete: killObj }, "-=0.4");
 
     // Slide3
     var tl3 = gsap.timeline({ defaults: { transformOrigin: "50% 50%" }}); // Slide3 timeline object
 
     // Slide3 features, bg-object
-    tl3.fromTo("#sl3-subhead > g", 0.7, { opacity: 0, y: 300, delay: 0.2, },{ opacity: 1, y: 0, ease: "back", stagger: 0.1, })
+    tl3.fromTo("#sl3-subhead > g", 0.7, { opacity: 0, y: 300, delay: 0.2, },{ opacity: 1, y: 0, ease: "back", stagger: 0.1 })
       .fromTo("#sl3-btng", { opacity: 0, y: 100, },{ opacity: 1, y: 0, ease: "back" }, "-=0.6")
       .fromTo("#sl3bg-obj", { opacity: 0, y: -100, },{ opacity: 1, y: 0, ease: "back" }, "-=0.6")
 
@@ -202,12 +203,27 @@ $(document).ready(function (e) {
 
       // Hi five
       .fromTo("#sl3-girl", { opacity: 0, y: 150, x: -150 },{ opacity: 1, y: 0, x: 0, ease: "back" }, "-=0.7")
-      .fromTo( "#sl3-man", { opacity: 0, x: 150 },{ opacity: 1, x: 0, ease: "back", onComplete: killObj(tl3) }, "-=0.7" );
+      .fromTo( "#sl3-man", { opacity: 0, x: 150 },{ opacity: 1, x: 0, ease: "back", onComplete: killObj }, "-=0.7" );
 
-    function killObj(timeline) {
-      // timeline.kill();
-      // console.log('timeline killed')
+      $('#sl1-restart').click(function(e){tl.restart();});
+      $('#sl2-restart').click(function(e){tl2.restart();});
+      $('#sl3-restart').click(function(e){tl3.restart();});
+
+    function killObj() {
+
+      // setTimeout(function(){
+
+        // tl.kill();
+        tl = null;
+        tl2 = null;
+        tl3 = null;
+        // console.log(`Killed, tl is now:${tl}, tl2 is now:${tl2}, tl3 is now:${tl3}`)
+
+      // }, 900)
+        
     }
+
   }
+
   animate();
 }); //DOM content loaded
