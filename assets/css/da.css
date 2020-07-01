@@ -253,7 +253,7 @@ a.da_link:hover {
 div.slide-btn-grp {
   position: relative;
   width: 50%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-around;
   margin: 20px auto;
