@@ -1,0 +1,293 @@
+:root {
+  --primary-color: #194cfa;
+  --accent-color: #26aab8;
+}
+::selection {
+  background: var(--primary-color) !important;
+  color: #fff !important;
+}
+@font-face {
+  font-family: pb;
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: pm;
+  src: url(../fonts/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: pr;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: psb;
+  src: url(../fonts/Poppins-SemiBold.ttf);
+}
+
+/*********** GENERIC STYLING ***********/
+* {
+  box-sizing: border-box !important;
+  max-width: 100%;
+}
+ul,
+li,
+ol {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none !important;
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+/* @media (min-width: 1281px) { */
+.wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.wrapper-padding {
+  padding: 60px 70px;
+}
+.wrapper-title h1 {
+  font-family: pb;
+  text-align: center;
+  color: #000;
+  margin: 0;
+  text-transform: capitalize;
+  /* font-size: 35px; */
+  max-width: 80%;
+  margin: auto;
+}
+a.da_link {
+  font-family: pm;
+  transition: all 0.4s;
+}
+a.da_link:hover {
+  letter-spacing: 1px;
+}
+/************** FOLLOWERS CART **************/
+
+/* TESTIMONIALS */
+.all-slides.wrapper {
+  margin: 50px auto;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 15px;
+}
+.carousel-wrapper {
+  overflow: hidden;
+  margin: auto;
+}
+.carousel-wrapper * {
+  box-sizing: border-box;
+}
+.carousel {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  min-height: 500px;
+  background-image: url(../img/carousel-bg.png);
+  background-position: center;
+  background-size: cover;
+}
+.bg-overlay {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.service-slide {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 85%;
+  z-index: 100;
+  transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+}
+.service-slide.initial,
+.service-slide.active {
+  opacity: 1;
+  position: relative;
+  z-index: 900;
+  display: inline-block;
+}
+.service-slide.prev,
+.service-slide.next {
+  z-index: 800;
+}
+.service-slide.prev {
+  transform: translateX(-100%);
+}
+.service-slide.next {
+  transform: translateX(100%);
+}
+.carousel__button--prev,
+.carousel__button--next {
+  position: absolute;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  border: 1px solid var(--primary-color);
+  transition: all 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--primary-color);
+  font-size: 20px;
+}
+.carousel__button--prev:hover,
+.carousel__button--next:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+.carousel__button--prev {
+  left: 0;
+}
+.carousel__button--next {
+  right: 0;
+}
+.carousel__button--next::after {
+  left: 47%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.slide-head > text, #sl2-head > text,#sl3-head > text {
+  font-family: pb;
+  font-size: 50px;
+  letter-spacing: 3px;
+  text-transform: capitalize;
+}
+.slide-sub-head > text, #sl2-subhead > text {
+  font-family: pb;
+  font-size: 50px;
+  letter-spacing: 3px;
+  text-transform: capitalize;
+}
+.slide-txt > text, #sl2-txt > text {
+  font-family: pm;
+  letter-spacing: 3px;
+}
+*/.all-testimo {}
+.service-slider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.service-slider > .service-slide {
+  width: 30%;
+  display: block;
+  margin: 10px;
+  padding: 10px;
+}
+.testimo-quote {
+  background: var(--primary-color);
+  padding: 20px;
+  position: relative;
+  display: block;
+}
+.testimo-quote p {
+  font-family: pm;
+  color: #fff;
+  margin: 0;
+  line-height: 2;
+}
+.testimo-quote-after {
+  position: relative;
+  display: inline-block;
+  left: 70px;
+  width: 80px;
+  height: 60px;
+  background: var(--primary-color);
+  clip-path: polygon(0px 90%, 0px 0px, 100% 0px);
+}
+.reviewer-info {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.reviewer-img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.reviewer-img > img {
+  width: 100%;
+  height: 100%;
+}
+.reviewer-detail {
+  margin-left: 25px;
+}
+.reviewer-name h6 {
+  font-family: psb;
+  font-size: 16px;
+  margin: 5px 0;
+}
+.reviewer-desig p {
+  font-family: pr;
+  color: #000;
+  margin: 5px 0;
+}
+/* TESTIMONIALS */
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+}
