@@ -94,7 +94,7 @@ a.da_link:hover {
   align-items: center;
   justify-content: space-around;
   position: relative;
-  max-height: 450px;
+  max-height: 500px;
   background-image: url(../img/carousel-bg.png);
   background-position: center;
   background-size: cover;
